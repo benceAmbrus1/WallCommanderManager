@@ -6,18 +6,19 @@ import com.players.*;
 
 public class Printer{
 
-    public void printTable(String[] options){
+    public void printTable(String[] options, String tableName){
         int number = 1;
+        System.out.println(tableName + ":");
         for(String option : options){
             System.out.println(number + ". " + option);
             number++;
         }
     }
 
-    public int printGetInput(String input){
+    public String printGetInput(String input){
         System.out.println(input);
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
+        String n = scan.nextLine();
         return n;
     }
 

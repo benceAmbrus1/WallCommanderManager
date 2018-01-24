@@ -3,9 +3,10 @@ package com;
 import com.systemfns.*;
 import com.players.*;
 
-public class NewGame{
+public class Game{
 
-    static String[] options = {"New Game", "Load Game", "Options", "Exit"};
+    static String menuName = "Main menu";
+    static String[] options = {"New Game", "Game menu2", "Game menu3", "Exit"};
     static Player player;
     static Printer pr;
 
@@ -17,8 +18,8 @@ public class NewGame{
         pr.welcome(player);
 
         while(true) {
-            pr.printTable(options);
-            mainMenuChoose(pr.printGetInput("Choose a number."));
+            pr.printTable(options, menuName);
+            mainMenuChoose(Integer.parseInt(pr.printGetInput("Press the number of one of the option: ")));
         }
         
     }
@@ -26,7 +27,8 @@ public class NewGame{
     public static void mainMenuChoose(int number){
         switch(number){
             case 1:
-                System.out.println("1");
+                Wall wall = new Wall();
+                wall.wallMenu();
                 break;
             case 2:
                 System.out.println("2");
